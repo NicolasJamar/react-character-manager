@@ -1,8 +1,8 @@
 // $blue: #3ea5ce;
-// $green: #99c712;
+// $purple: #d543a3;
 // $yellow: lighten(#ffba00, 5%);
 // $red: #E53B3A;
-// $colors: $blue, $green, $yellow, $red;
+// $colors: $blue, $purple, $yellow, $red;
 //
 // $key: random( length($colors) );
 // $nth: nth( $colors, $key );
@@ -23,18 +23,17 @@
 //     }
 //   }
 // }
-//
-// #card_body_bg { @include backgrounds($main-color, 10); }
-
-
-$blue: #3ea5ce;
-$green: #99c712;
-$yellow: lighten(#ffba00, 5%);
-$red: #E53B3A;
-$colors: $blue, $green, $yellow, $red;
-$key: random( length($colors) );
-
 
 #card_body_bg {
-  background-color: black;
+  // @include backgrounds($main-color, 10);
+  background-color: white;
+  border-radius: 40px;
+  border: 0px;
 }
+
+
+// #color-div{
+//   border:1px solid gray;
+//   width:50px;
+//   height:50px;
+// }
