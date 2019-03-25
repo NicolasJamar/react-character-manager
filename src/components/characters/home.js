@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 const API = 'https://character-database.becode.xyz/characters';
 
@@ -47,11 +49,12 @@ export default class Home extends Component {
       <div className="container-fluid">
         <div className="row justify-content-center">
           {character.map(character =>
-            <div key={character.id} className="card border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 40 + 'rem', height: 12 + 'rem', background:random_bg_color() }}>
+            <div key={character.id} className="card border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 30 + 'rem', height: 10 + 'rem', background:random_bg_color() }}>
               <div className="card-body">
                 <img src={`data:image/jpeg;base64,${character.image}`} style={{width: 100 + 'px'}} className="rounded-circle float-left mr-5" alt={character.name}/>
-                <h5 className="card-title h1">{character.name}</h5>
-                <p className="card-text h4">{character.shortDescription}</p>
+                <h5 className="card-title">{character.name}</h5>
+                <p className="card-text">{character.shortDescription}</p>
+                <p><FontAwesomeIcon icon="edit" /><FontAwesomeIcon icon="trash" /></p>
               </div>
             </div>
             )
