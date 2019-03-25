@@ -5,11 +5,16 @@ const API = 'https://character-database.becode.xyz/characters';
 
 /* Function for generating a random color for the background of the cards */
 function random_bg_color() {
-    let x = Math.floor(Math.random() * 256);
-    let y = Math.floor(Math.random() * 256);
-    let z = Math.floor(Math.random() * 256);
+    // For really random colors
+    // let x = Math.floor(Math.random() * 256);
+    // let y = Math.floor(Math.random() * 256);
+    // let z = Math.floor(Math.random() * 256);
     // let bgColor = "rgb(" + x + "," + y + "," + z + ")";
-    let colors = ["#7F1842", "#7D1E6A", "#01877C", "#B58A08", "#A1412C"]
+
+    // For more controlled colors
+    // let colors_dark = ["#7F1842", "#7D1E6A", "#01877C", "#B58A08", "#A1412C"];
+    let colors_bright = ["#CC276A", "#C72FA8", "#01CCBC", "#F7BC0B", "#E85E40"];
+    let colors = colors_bright;
     let bgColor = colors[Math.floor(Math.random()*colors.length)];
 
      return bgColor;
@@ -42,11 +47,11 @@ export default class Home extends Component {
       <div className="container-fluid">
         <div className="row justify-content-center">
           {character.map(character =>
-            <div key={character.id} className="card border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 25 + 'rem', background:random_bg_color() }}>
+            <div key={character.id} className="card border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 40 + 'rem', height: 12 + 'rem', background:random_bg_color() }}>
               <div className="card-body">
                 <img src={`data:image/jpeg;base64,${character.image}`} style={{width: 100 + 'px'}} className="rounded-circle float-left mr-5" alt={character.name}/>
-                <h5 className="card-title">{character.name}</h5>
-                <p className="card-text">{character.shortDescription}</p>
+                <h5 className="card-title h1">{character.name}</h5>
+                <p className="card-text h4">{character.shortDescription}</p>
               </div>
             </div>
             )

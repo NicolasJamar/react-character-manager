@@ -15,7 +15,7 @@ class App extends Component {
             <Link to="/"><img src={logo} className="logo m-5" alt="logo"/></Link>
           </div>
         </div>
-        <div className="container">
+        <div className="container-fluid">
           <Routes />
         </div>
       </React.Fragment>
