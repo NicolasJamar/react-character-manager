@@ -1,39 +1,10 @@
-// $blue: #3ea5ce;
-// $purple: #d543a3;
-// $yellow: lighten(#ffba00, 5%);
-// $red: #E53B3A;
-// $colors: $blue, $purple, $yellow, $red;
-//
-// $key: random( length($colors) );
-// $nth: nth( $colors, $key );
-//
-// $main-color: $nth !default;
-//
-// @mixin backgrounds($c, $y) {
-//   background: $c;
-//   @for $i from 1 through $y {
-//     $k: 3%;
-//     $j: $i - 1;
-//
-//     @if $i == 1 {
-//       &:nth-child(#{$i}) { background: $c; }
-//     }
-//     @else {
-//       &:nth-child(#{$i}) { background: darken($c, ($k * $j)); }
-//     }
-//   }
-// }
+
 
 #card_body_bg {
-  // @include backgrounds($main-color, 10);
-  background-color: white;
-  border-radius: 40px;
+  border-radius: 400px;
   border: 0px;
 }
 
-
-// #color-div{
-//   border:1px solid gray;
-//   width:50px;
-//   height:50px;
-// }
+.logo{
+  width: 150px;
+}

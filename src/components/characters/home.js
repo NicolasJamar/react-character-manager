@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
-import logo from '../assets/logo.svg';
-import '../css/App.scss';
-import '../css/hover.scss';
-import 'bootstrap/dist/css/bootstrap.css';
-
+import {Link} from 'react-router-dom';
 
 const API = 'https://character-database.becode.xyz/characters';
 
+/* Function for generating a random color for the background of the cards */
 function random_bg_color() {
     let x = Math.floor(Math.random() * 256);
     let y = Math.floor(Math.random() * 256);
     let z = Math.floor(Math.random() * 256);
-    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    // let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    let colors = ["#7F1842", "#7D1E6A", "#01877C", "#B58A08", "#A1412C"]
+    let bgColor = colors[Math.floor(Math.random()*colors.length)];
 
      return bgColor;
     }
-random_bg_color();
 
-class App extends Component {
-
+export default class Home extends Component {
 
   constructor(props) {
     super(props);
@@ -39,14 +36,17 @@ class App extends Component {
 
     return (
       <React.Fragment>
+        <Link to="/characters/add" className=" w-100">
+          <p>Add a character</p>
+        </Link>
       <div className="container-fluid">
         <div className="row justify-content-center">
           {character.map(character =>
-            <div class="card border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 25 + 'rem', background:random_bg_color() }}>
-              <div class="card-body">
+            <div key={character.id} className="card border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 25 + 'rem', background:random_bg_color() }}>
+              <div className="card-body">
                 <img src={`data:image/jpeg;base64,${character.image}`} style={{width: 100 + 'px'}} className="rounded-circle float-left mr-5" alt={character.name}/>
-                <h5 class="card-title">{character.name}</h5>
-                <p class="card-text">{character.shortDescription}</p>
+                <h5 className="card-title">{character.name}</h5>
+                <p className="card-text">{character.shortDescription}</p>
               </div>
             </div>
             )
@@ -57,5 +57,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
