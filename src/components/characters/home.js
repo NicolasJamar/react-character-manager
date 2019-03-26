@@ -61,19 +61,23 @@ export default class Home extends Component {
       <React.Fragment>
         <div className="text-center">
           <Link to="/characters/add" className=" w-100">
-            <button type="button" class="btn btn-success">Add a character</button>
+            <button type="button" className="btn btn-success">Add a character</button>
           </Link>
         </div>
         <div className="container-fluid">
           <div className="row justify-content-center">
             {character.map(character =>
-              <div key={character.id} className="card border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 30 + 'rem', height: 10 + 'rem', background: character.color }}>
-                <div className="card-body">
-                  <img src={`data:image/jpeg;base64,${character.image}`} style={{width: 100 + 'px'}} className="rounded-circle float-left mr-5" alt={character.name}/>
-                  <h5 className="card-title">{character.name}</h5>
-                  <p className="card-text">{character.shortDescription}</p>
-                  <p><h3><Link to={"/characters/show/" + character.id }className="p-2"><FontAwesomeIcon icon="search" /></Link><FontAwesomeIcon icon="edit" /><Link to="/" className="p-2" onClick={(d) => { if (window.confirm('Are you sure you wish to delete this super hero?')) this.deleteSuperHeros(character.id) } }><FontAwesomeIcon icon="trash" /></Link></h3></p>
+              <div key={character.id} className="border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 30 + 'rem', height: 10 + 'rem' , background: character.color }}>
+                <div className="float-left text-center">
+                  <img src={`data:image/jpeg;base64,${character.image}`} style={{width: 100 + 'px'}} className="rounded-circle my-auto mr-3" alt={character.name}/>
+                  <div className="position-fixed bottom">
+                    <Link to={"/characters/show/" + character.id }className=" p-2"><FontAwesomeIcon icon="search" /></Link>
+                    <Link to={"/characters/edit/" + character.id }className=" p-2"><FontAwesomeIcon icon="edit" /></Link>
+                    <Link to="/" className="p-2" onClick={(d) => { if (window.confirm('Are you sure you wish to delete this super hero?')) this.deleteSuperHeros(character.id) } }><FontAwesomeIcon icon="trash" /></Link>
+                  </div>
                 </div>
+                <h5 className="card-title ">{character.name}</h5>
+                <p className="card-text">{character.shortDescription}</p>
               </div>
               )
             }

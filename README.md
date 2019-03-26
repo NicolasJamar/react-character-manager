@@ -11,7 +11,7 @@ Create a character manger with:
 * Possibility to edit an image
 * Possibility to delete a Character
 
-[Look at me](#)
+[Look at me](https://scalajeremy.github.io/react-character-manager/#/
 
 # Ressources
 
@@ -19,7 +19,7 @@ Create a character manger with:
 
 ## Status
 
-Starting....
+Everything working except editing
 
 ## Know Issues
 

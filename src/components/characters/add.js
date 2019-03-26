@@ -7,7 +7,8 @@ export default class Add extends Component {
   state = {
     name: '',
     shortDescription: '',
-    description:''
+    description:'',
+    image:''
   }
 
   handleChangeName = event => {
@@ -22,6 +23,24 @@ export default class Add extends Component {
     this.setState({description: event.target.value});
   }
 
+  handleChangeImg(i) {
+    i.preventDefault();
+
+    let reader = new FileReader();
+    console.log(reader);
+    let file = i.target.files[0];
+    let output = document.getElementById('output');
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result
+      });
+
+      output.src = reader.result
+    }
+    reader.readAsDataURL(file)
+  }
 
   handleSubmit = event => {
     event.preventDefault();
@@ -29,7 +48,8 @@ export default class Add extends Component {
     const obj = {
       name: this.state.name,
       shortDescription: this.state.shortDescription,
-      description: this.state.description
+      description: this.state.description,
+      image: this.state.imagePreviewUrl.substr(this.state.imagePreviewUrl.indexOf(',') + 1)
     };
 
     axios.post(`https://character-database.becode.xyz/characters`, obj)
@@ -63,7 +83,8 @@ export default class Add extends Component {
               <div className="input-group mb-3">
                 <div className="custom-file">
                   <label className="custom-file-label" htmlFor="imageHero">Choose a picture for your hero</label>
-                  <input type="file" className="custom-file-input" id="imageHero"/>
+                  <input type="file" className="custom-file-input" id="imageHero" onChange={(i)=>this.handleChangeImg(i)} />
+                  <div><img className="output" id="output"/></div>
                 </div>
               </div>
               <div className="text-center m-2">

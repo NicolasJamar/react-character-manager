@@ -25,6 +25,8 @@ export default class Show extends Component {
   async fetchCharacters() {
     const response = await fetch(API + this.props.match.params.id);
     const data = await response.json();
+    console.log(JSON.stringify(response.data));
+
     this.setState({ character: data });
   }
 
