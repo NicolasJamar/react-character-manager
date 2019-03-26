@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import axios from 'axios';
 
 
-const API = 'https://character-database.becode.xyz/characters';
+const API = 'https://character-database.becode.xyz/characters/';
 
 /* Function for generating a random color for the background of the cards */
 function random_bg_color() {
@@ -33,9 +34,24 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    fetch(API)
-      .then(response => response.json())
-      .then(data => this.setState({ character: data }));
+    this.fetchCharacters();
+  }
+  componentDidUpdate(){
+
+  }
+  async fetchCharacters() {
+    const response = await fetch(API);
+    const data = await response.json();
+    console.log("data", data);
+    data.forEach((c) => {
+      c.color = random_bg_color();
+    });
+    this.setState({ character: data });
+  }
+
+  async deleteSuperHeros(d){
+    await axios.delete("https://character-database.becode.xyz/characters/" + d);
+    this.fetchCharacters();
   }
 
   render() {
@@ -43,24 +59,26 @@ export default class Home extends Component {
 
     return (
       <React.Fragment>
-        <Link to="/characters/add" className=" w-100">
-          <p>Add a character</p>
-        </Link>
-      <div className="container-fluid">
-        <div className="row justify-content-center">
-          {character.map(character =>
-            <div key={character.id} className="card border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 30 + 'rem', height: 10 + 'rem', background:random_bg_color() }}>
-              <div className="card-body">
-                <img src={`data:image/jpeg;base64,${character.image}`} style={{width: 100 + 'px'}} className="rounded-circle float-left mr-5" alt={character.name}/>
-                <h5 className="card-title">{character.name}</h5>
-                <p className="card-text">{character.shortDescription}</p>
-                <p><FontAwesomeIcon icon="edit" /><FontAwesomeIcon icon="trash" /></p>
-              </div>
-            </div>
-            )
-          }
+        <div className="text-center">
+          <Link to="/characters/add" className=" w-100">
+            <button type="button" class="btn btn-success">Add a character</button>
+          </Link>
         </div>
-      </div>
+        <div className="container-fluid">
+          <div className="row justify-content-center">
+            {character.map(character =>
+              <div key={character.id} className="card border-danger p-3 m-2 hvr-buzz" id="card_body_bg" style={{width: 30 + 'rem', height: 10 + 'rem', background: character.color }}>
+                <div className="card-body">
+                  <img src={`data:image/jpeg;base64,${character.image}`} style={{width: 100 + 'px'}} className="rounded-circle float-left mr-5" alt={character.name}/>
+                  <h5 className="card-title">{character.name}</h5>
+                  <p className="card-text">{character.shortDescription}</p>
+                  <p><h3><Link to={"/characters/show/" + character.id }className="p-2"><FontAwesomeIcon icon="search" /></Link><FontAwesomeIcon icon="edit" /><Link to="/" className="p-2" onClick={(d) => { if (window.confirm('Are you sure you wish to delete this super hero?')) this.deleteSuperHeros(character.id) } }><FontAwesomeIcon icon="trash" /></Link></h3></p>
+                </div>
+              </div>
+              )
+            }
+          </div>
+        </div>
       </React.Fragment>
     );
   }

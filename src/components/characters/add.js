@@ -6,7 +6,8 @@ export default class Add extends Component {
 
   state = {
     name: '',
-    shortDescription: ''
+    shortDescription: '',
+    description:''
   }
 
   handleChangeName = event => {
@@ -35,6 +36,7 @@ export default class Add extends Component {
       .then(res => {
          console.log(res);
          console.log(res.data);
+         this.props.history.push('/')
        })
   }
 
