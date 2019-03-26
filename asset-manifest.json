@@ -1,16 +1,17 @@
 {
-  "main.css": "/react-character-manager/static/css/main.e8a733f3.chunk.css",
-  "main.js": "/react-character-manager/static/js/main.4af75d9d.chunk.js",
-  "main.js.map": "/react-character-manager/static/js/main.4af75d9d.chunk.js.map",
+  "main.css": "/react-character-manager/static/css/main.a979da15.chunk.css",
+  "main.js": "/react-character-manager/static/js/main.8ae2a45b.chunk.js",
+  "main.js.map": "/react-character-manager/static/js/main.8ae2a45b.chunk.js.map",
   "runtime~main.js": "/react-character-manager/static/js/runtime~main.0c53a67b.js",
   "runtime~main.js.map": "/react-character-manager/static/js/runtime~main.0c53a67b.js.map",
   "static/css/2.f7ae5d29.chunk.css": "/react-character-manager/static/css/2.f7ae5d29.chunk.css",
-  "static/js/2.9051aa8e.chunk.js": "/react-character-manager/static/js/2.9051aa8e.chunk.js",
-  "static/js/2.9051aa8e.chunk.js.map": "/react-character-manager/static/js/2.9051aa8e.chunk.js.map",
+  "static/js/2.116d60d3.chunk.js": "/react-character-manager/static/js/2.116d60d3.chunk.js",
+  "static/js/2.116d60d3.chunk.js.map": "/react-character-manager/static/js/2.116d60d3.chunk.js.map",
   "index.html": "/react-character-manager/index.html",
-  "precache-manifest.8ee0b7472251932029ea500d6a77c7b2.js": "/react-character-manager/precache-manifest.8ee0b7472251932029ea500d6a77c7b2.js",
+  "precache-manifest.41a7112036c68cfcb780f929c29be8d2.js": "/react-character-manager/precache-manifest.41a7112036c68cfcb780f929c29be8d2.js",
   "service-worker.js": "/react-character-manager/service-worker.js",
   "static/css/2.f7ae5d29.chunk.css.map": "/react-character-manager/static/css/2.f7ae5d29.chunk.css.map",
-  "static/css/main.e8a733f3.chunk.css.map": "/react-character-manager/static/css/main.e8a733f3.chunk.css.map",
-  "static/media/logo.svg": "/react-character-manager/static/media/logo.5d5d9eef.svg"
+  "static/css/main.a979da15.chunk.css.map": "/react-character-manager/static/css/main.a979da15.chunk.css.map",
+  "static/media/index.scss": "/react-character-manager/static/media/bg5.86630b90.jpg",
+  "static/media/logo.svg": "/react-character-manager/static/media/logo.83b92ce3.svg"
 }
