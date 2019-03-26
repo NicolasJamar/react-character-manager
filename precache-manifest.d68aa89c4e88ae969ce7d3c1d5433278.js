@@ -12,23 +12,23 @@ self.__precacheManifest = [
     "url": "/react-character-manager/static/js/runtime~main.0c53a67b.js"
   },
   {
-    "revision": "9aa914c96551aecd1eb7",
-    "url": "/react-character-manager/static/js/main.8ae2a45b.chunk.js"
+    "revision": "23f9bce70c343958c66b",
+    "url": "/react-character-manager/static/js/main.21e0c5ba.chunk.js"
   },
   {
-    "revision": "61ca0fda9cd5fccaf2b0",
-    "url": "/react-character-manager/static/js/2.116d60d3.chunk.js"
+    "revision": "e949180d643d41dddbea",
+    "url": "/react-character-manager/static/js/2.cb5f5c8c.chunk.js"
   },
   {
-    "revision": "9aa914c96551aecd1eb7",
-    "url": "/react-character-manager/static/css/main.a979da15.chunk.css"
+    "revision": "23f9bce70c343958c66b",
+    "url": "/react-character-manager/static/css/main.fcd6b999.chunk.css"
   },
   {
-    "revision": "61ca0fda9cd5fccaf2b0",
+    "revision": "e949180d643d41dddbea",
     "url": "/react-character-manager/static/css/2.f7ae5d29.chunk.css"
   },
   {
-    "revision": "d14693eb1cc40832e0332134b27ed898",
+    "revision": "6a50e6dcd9d0a355596eb7416064ffa4",
     "url": "/react-character-manager/index.html"
   }
 ];
