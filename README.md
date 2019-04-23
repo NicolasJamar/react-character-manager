@@ -11,7 +11,7 @@ Create a character manger with:
 * Possibility to edit an image
 * Possibility to delete a Character
 
-[Look at me](https://scalajeremy.github.io/react-character-manager/#/
+[Look at me](https://scalajeremy.github.io/react-character-manager/#/)
 
 # Ressources
 
@@ -23,7 +23,7 @@ Everything working except editing
 
 ## Know Issues
 
-* Nothing works for now... but that's normal.
+* Cannot edit the content of input
 
 ## Thanks to
 
